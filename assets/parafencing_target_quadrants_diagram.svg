@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%" style="background-color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <marker id="arrow-red-target" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#C22032" />
+    </marker>
+    <marker id="arrow-navy-target" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#131F48" />
+    </marker>
+    <filter id="shadow-target" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#131F48" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="840" height="52" rx="6" fill="#131F48" />
+  <text x="50" y="44" fill="#FFFFFF" font-size="14" font-weight="bold" letter-spacing="1">TEAM USA PARAFENCING • TACTICAL TARGET GEOMETRY</text>
+  <text x="50" y="60" fill="#CBD5E1" font-size="11">Frontal Perspective: Four Defensive Quadrants (Lines 4, 6, 7, 8) &amp; Seated Holding Anchor</text>
+  <rect x="730" y="32" width="125" height="28" rx="4" fill="#C22032" />
+  <text x="792" y="50" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Tactical Framework</text>
+
+  <!-- Ground Strip Surface -->
+  <rect x="30" y="480" width="840" height="12" fill="#E2E8F0" />
+  <line x1="30" y1="480" x2="870" y2="480" stroke="#0E406A" stroke-width="2" />
+  <line x1="450" y1="460" x2="450" y2="495" stroke="#0E406A" stroke-width="2" stroke-dasharray="4,4" />
+
+  <!-- ======================================================== -->
+  <!-- WHEELCHAIR CHASSIS (FRONTAL VIEW)                        -->
+  <!-- ======================================================== -->
+  <!-- Floor Clamp Bar Platform -->
+  <rect x="310" y="470" width="280" height="14" rx="2" fill="#131F48" />
+  <rect x="330" y="454" width="24" height="20" rx="2" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+  <rect x="546" y="454" width="24" height="20" rx="2" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+  <circle cx="342" cy="460" r="4" fill="#C22032" />
+  <circle cx="558" cy="460" r="4" fill="#C22032" />
+
+  <!-- Left Cambered Sports Wheel (Tilted ~12°) -->
+  <g transform="rotate(10 320 370)">
+    <ellipse cx="320" cy="370" rx="26" ry="85" fill="none" stroke="#131F48" stroke-width="6" />
+    <ellipse cx="320" cy="370" rx="20" ry="76" fill="none" stroke="#CBD5E1" stroke-width="2" />
+    <circle cx="320" cy="370" r="9" fill="#0E406A" stroke="#131F48" stroke-width="2" />
+    <line x1="320" y1="370" x2="320" y2="290" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+    <line x1="320" y1="370" x2="320" y2="450" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+    <line x1="320" y1="370" x2="300" y2="330" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+    <line x1="320" y1="370" x2="340" y2="410" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+  </g>
+
+  <!-- Right Cambered Sports Wheel (Tilted -12°) -->
+  <g transform="rotate(-10 580 370)">
+    <ellipse cx="580" cy="370" rx="26" ry="85" fill="none" stroke="#131F48" stroke-width="6" />
+    <ellipse cx="580" cy="370" rx="20" ry="76" fill="none" stroke="#CBD5E1" stroke-width="2" />
+    <circle cx="580" cy="370" r="9" fill="#0E406A" stroke="#131F48" stroke-width="2" />
+    <line x1="580" y1="370" x2="580" y2="290" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+    <line x1="580" y1="370" x2="580" y2="450" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+    <line x1="580" y1="370" x2="560" y2="330" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+    <line x1="580" y1="370" x2="600" y2="410" stroke="#94A3B8" stroke-width="1.5" opacity="0.6" />
+  </g>
+
+  <!-- Footrest Platform & Strapped Feet -->
+  <rect x="390" y="420" width="120" height="10" rx="3" fill="#0E406A" stroke="#131F48" stroke-width="1.5" />
+  <rect x="400" y="414" width="45" height="12" rx="3" fill="#FFFFFF" stroke="#131F48" stroke-width="1.5" />
+  <rect x="455" y="414" width="45" height="12" rx="3" fill="#FFFFFF" stroke="#131F48" stroke-width="1.5" />
+  <line x1="390" y1="416" x2="510" y2="416" stroke="#C22032" stroke-width="3" />
+
+  <!-- Seat Cushion -->
+  <rect x="365" y="325" width="170" height="18" rx="4" fill="#0E406A" stroke="#131F48" stroke-width="2" />
+
+  <!-- INTEGRATED HOLDING BAR (Non-Sword Side: Athlete's Left / Viewer's Right) -->
+  <path d="M 545 330 L 545 235 L 530 235" fill="none" stroke="#0E406A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="522" y="228" width="22" height="14" rx="3" fill="#131F48" />
+
+  <!-- ======================================================== -->
+  <!-- FENCER BODY (FRONTAL SEATED EN GARDE)                     -->
+  <!-- ======================================================== -->
+  <!-- Legs / Breeches -->
+  <path d="M 385 330 L 405 414" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" />
+  <path d="M 385 330 L 405 414" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+  <path d="M 515 330 L 495 414" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" />
+  <path d="M 515 330 L 495 414" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Pelvic Security Strap -->
+  <line x1="365" y1="318" x2="535" y2="318" stroke="#C22032" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Torso / Fencing Jacket -->
+  <path d="M 390 315 L 380 200 C 380 185, 410 178, 450 178 C 490 178, 520 185, 520 200 L 510 315 Z" fill="#FFFFFF" stroke="#131F48" stroke-width="2" />
+  <!-- Lamé Valid Target Outline (Foil/Sabre target vest) -->
+  <path d="M 398 310 L 390 206 C 390 196, 415 190, 450 190 C 485 190, 510 196, 510 206 L 502 310 Z" fill="#F1F5F9" stroke="#0E406A" stroke-width="1.5" stroke-dasharray="4,3" />
+
+  <!-- Non-Sword Hand (Grip on Holding Bar) -->
+  <circle cx="530" cy="235" r="8" fill="#131F48" />
+  <path d="M 515 205 Q 532 215 530 235" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+  <path d="M 515 205 Q 532 215 530 235" fill="none" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Mask & Bib (Centered Facing Viewer) -->
+  <ellipse cx="450" cy="135" rx="20" ry="26" fill="#FFFFFF" stroke="#131F48" stroke-width="2.5" />
+  <!-- Mesh Crosshatch Accent -->
+  <ellipse cx="450" cy="135" rx="15" ry="20" fill="none" stroke="#CBD5E1" stroke-width="1" />
+  <!-- Protective Mask Bib -->
+  <path d="M 432 152 L 468 152 L 460 174 L 440 174 Z" fill="#0E406A" stroke="#131F48" stroke-width="1.5" />
+
+  <!-- Sword Arm (Right Arm / Viewer's Left in En Garde Sixte) -->
+  <!-- Upper Arm extending out and forward -->
+  <path d="M 385 205 L 340 220" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" />
+  <path d="M 385 205 L 340 220" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+  <!-- Forearm angled inward presenting weapon -->
+  <path d="M 340 220 L 365 240" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+  <path d="M 340 220 L 365 240" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+  <!-- Glove & Bell Guard -->
+  <circle cx="368" cy="242" r="7" fill="#0E406A" />
+  <ellipse cx="372" cy="244" rx="12" ry="16" fill="#CBD5E1" stroke="#131F48" stroke-width="2" />
+  <!-- Blade Pointing toward opponent / center-line -->
+  <line x1="372" y1="244" x2="445" y2="200" stroke="#131F48" stroke-width="3" />
+  <circle cx="445" cy="200" r="3.5" fill="#C22032" />
+
+  <!-- ======================================================== -->
+  <!-- FOUR TACTICAL TARGET QUADRANTS (CROSSHAIR OVERLAY)        -->
+  <!-- ======================================================== -->
+  <!-- Quadrant Center Crosshairs -->
+  <!-- Vertical Division Line -->
+  <line x1="450" y1="180" x2="450" y2="315" stroke="#C22032" stroke-width="2" stroke-dasharray="4,3" />
+  <!-- Horizontal Division Line -->
+  <line x1="385" y1="250" x2="515" y2="250" stroke="#C22032" stroke-width="2" stroke-dasharray="4,3" />
+  <circle cx="450" cy="250" r="4" fill="#C22032" />
+
+  <!-- Tactical Target Attack Vectors (Red Directional Arrows) -->
+  <!-- Vector to High Outside (Line 6) -->
+  <path d="M 230 160 L 405 215" fill="none" stroke="#C22032" stroke-width="2.5" marker-end="url(#arrow-red-target)" />
+  <!-- Vector to High Inside (Line 4) -->
+  <path d="M 670 160 L 490 215" fill="none" stroke="#C22032" stroke-width="2.5" marker-end="url(#arrow-red-target)" />
+  <!-- Vector to Low Outside (Line 8) -->
+  <path d="M 230 330 L 405 285" fill="none" stroke="#C22032" stroke-width="2.5" marker-end="url(#arrow-red-target)" />
+  <!-- Vector to Low Inside (Line 7) -->
+  <path d="M 670 330 L 490 285" fill="none" stroke="#C22032" stroke-width="2.5" marker-end="url(#arrow-red-target)" />
+
+  <!-- ======================================================== -->
+  <!-- TECHNICAL CALLOUT CARDS                                   -->
+  <!-- ======================================================== -->
+  <!-- Quadrant 1: High Outside (Line 6 / Sixte) -->
+  <g filter="url(#shadow-target)">
+    <rect x="40" y="130" width="180" height="60" rx="4" fill="#FFFFFF" stroke="#131F48" stroke-width="1.5" />
+    <rect x="40" y="130" width="6" height="60" rx="2" fill="#131F48" />
+    <text x="54" y="148" fill="#131F48" font-size="11" font-weight="bold">LINE 6 • HIGH OUTSIDE</text>
+    <text x="54" y="164" fill="#525252" font-size="9.5">Weapon-arm shoulder &amp; high flank</text>
+    <text x="54" y="178" fill="#C22032" font-size="9" font-weight="bold">Parry: Hand in Sixte / Point high</text>
+  </g>
+
+  <!-- Quadrant 2: High Inside (Line 4 / Quarte) -->
+  <g filter="url(#shadow-target)">
+    <rect x="680" y="130" width="180" height="60" rx="4" fill="#FFFFFF" stroke="#131F48" stroke-width="1.5" />
+    <rect x="680" y="130" width="6" height="60" rx="2" fill="#131F48" />
+    <text x="694" y="148" fill="#131F48" font-size="11" font-weight="bold">LINE 4 • HIGH INSIDE</text>
+    <text x="694" y="164" fill="#525252" font-size="9.5">Non-weapon chest &amp; mask bib</text>
+    <text x="694" y="178" fill="#C22032" font-size="9" font-weight="bold">Parry: Hand crosses center in Quarte</text>
+  </g>
+
+  <!-- Quadrant 3: Low Outside (Line 8 / Octave) -->
+  <g filter="url(#shadow-target)">
+    <rect x="40" y="300" width="180" height="60" rx="4" fill="#FFFFFF" stroke="#0E406A" stroke-width="1.5" />
+    <rect x="40" y="300" width="6" height="60" rx="2" fill="#0E406A" />
+    <text x="54" y="318" fill="#0E406A" font-size="11" font-weight="bold">LINE 8 • LOW OUTSIDE</text>
+    <text x="54" y="334" fill="#525252" font-size="9.5">Weapon-side hip &amp; lower flank</text>
+    <text x="54" y="348" fill="#C22032" font-size="9" font-weight="bold">Parry: Octave / Point depressed low</text>
+  </g>
+
+  <!-- Quadrant 4: Low Inside (Line 7 / Septime) -->
+  <g filter="url(#shadow-target)">
+    <rect x="680" y="300" width="180" height="60" rx="4" fill="#FFFFFF" stroke="#0E406A" stroke-width="1.5" />
+    <rect x="680" y="300" width="6" height="60" rx="2" fill="#0E406A" />
+    <text x="694" y="318" fill="#0E406A" font-size="11" font-weight="bold">LINE 7 • LOW INSIDE</text>
+    <text x="694" y="334" fill="#525252" font-size="9.5">Non-weapon groin &amp; deep flank</text>
+    <text x="694" y="348" fill="#C22032" font-size="9" font-weight="bold">Parry: Septime sweep under attack</text>
+  </g>
+
+  <!-- Callout for Holding Bar Grip -->
+  <g filter="url(#shadow-target)">
+    <rect x="680" y="220" width="180" height="42" rx="4" fill="#FFFFFF" stroke="#131F48" stroke-width="1" />
+    <text x="692" y="236" fill="#131F48" font-size="10" font-weight="bold">Holding Bar Grip (Anchor)</text>
+    <text x="692" y="250" fill="#525252" font-size="8.5">Non-dominant hand stabilizes torso</text>
+    <line x1="680" y1="240" x2="550" y2="236" stroke="#131F48" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow-navy-target)" />
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="30" y="516" width="840" height="28" rx="4" fill="#F8FAFC" stroke="#E2E8F0" />
+  <circle cx="50" cy="530" r="4" fill="#C22032" />
+  <text x="60" y="533" fill="#131F48" font-size="10" font-weight="bold">Red Crosshairs &amp; Vectors:</text>
+  <text x="210" y="533" fill="#525252" font-size="10">Target Quadrant Boundaries &amp; Classical Attack Angles</text>
+
+  <circle cx="530" cy="530" r="4" fill="#0E406A" />
+  <text x="540" y="533" fill="#131F48" font-size="10" font-weight="bold">Lamé Vest Outline:</text>
+  <text x="645" y="533" fill="#525252" font-size="10">Valid Target Zone (Foil / Sabre / Épée)</text>
+
+  <text x="850" y="533" fill="#0E406A" font-size="10" font-weight="bold" text-anchor="end">MLCS-v1.0 Diagram Pack</text>
+</svg>

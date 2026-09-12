@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="100%" height="100%" style="background-color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Markers -->
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#C22032" />
+    </marker>
+    <marker id="arrow-navy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#131F48" />
+    </marker>
+    <!-- Drop Shadow -->
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#131F48" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Title Banner -->
+  <rect x="30" y="20" width="840" height="52" rx="6" fill="#131F48" />
+  <text x="50" y="44" fill="#FFFFFF" font-size="14" font-weight="bold" letter-spacing="1">TEAM USA PARAFENCING • TECHNICAL SPECIFICATION</text>
+  <text x="50" y="60" fill="#CBD5E1" font-size="11">Official Strip Rigging, Distance Measurement (Mesurage) &amp; Wheelchair Anchoring</text>
+  <rect x="730" y="32" width="125" height="28" rx="4" fill="#C22032" />
+  <text x="792" y="50" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Rule o.100 / o.102</text>
+
+  <!-- Ground Strip Surface -->
+  <rect x="30" y="430" width="840" height="12" fill="#E2E8F0" />
+  <line x1="30" y1="430" x2="870" y2="430" stroke="#0E406A" stroke-width="2" />
+  <line x1="450" y1="410" x2="450" y2="445" stroke="#C22032" stroke-width="2" stroke-dasharray="4,4" />
+  <text x="450" y="458" fill="#C22032" font-size="10" font-weight="bold" text-anchor="middle">Strip Centerline</text>
+
+  <!-- ======================================================== -->
+  <!-- PARAFENCING FLOOR FRAME (Saint-Hilaire Standard)         -->
+  <!-- ======================================================== -->
+  <!-- Central Frame Rail -->
+  <rect x="160" y="416" width="580" height="14" rx="2" fill="#0E406A" stroke="#131F48" stroke-width="1.5" />
+  <!-- Metric Ticks on Rail -->
+  <g stroke="#CBD5E1" stroke-width="1">
+    <line x1="200" y1="416" x2="200" y2="423" />
+    <line x1="250" y1="416" x2="250" y2="423" />
+    <line x1="300" y1="416" x2="300" y2="423" />
+    <line x1="350" y1="416" x2="350" y2="423" />
+    <line x1="400" y1="416" x2="400" y2="423" />
+    <line x1="450" y1="416" x2="450" y2="427" stroke="#FFFFFF" stroke-width="2" />
+    <line x1="500" y1="416" x2="500" y2="423" />
+    <line x1="550" y1="416" x2="550" y2="423" />
+    <line x1="600" y1="416" x2="600" y2="423" />
+    <line x1="650" y1="416" x2="650" y2="423" />
+    <line x1="700" y1="416" x2="700" y2="423" />
+  </g>
+  <!-- Central Locking Block -->
+  <rect x="432" y="410" width="36" height="22" rx="3" fill="#131F48" stroke="#0E406A" stroke-width="1.5" />
+  <circle cx="450" cy="421" r="5" fill="#C22032" />
+
+  <!-- Left Frame Clamp Base -->
+  <path d="M 170 422 L 290 422 L 285 410 L 175 410 Z" fill="#131F48" />
+  <rect x="180" y="390" width="16" height="24" rx="2" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+  <rect x="270" y="390" width="16" height="24" rx="2" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+  <!-- Wheel Clamp Screws / Knobs -->
+  <circle cx="188" cy="396" r="4" fill="#C22032" />
+  <circle cx="278" cy="396" r="4" fill="#C22032" />
+
+  <!-- Right Frame Clamp Base -->
+  <path d="M 610 422 L 730 422 L 725 410 L 615 410 Z" fill="#131F48" />
+  <rect x="620" y="390" width="16" height="24" rx="2" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+  <rect x="710" y="390" width="16" height="24" rx="2" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+  <circle cx="628" cy="396" r="4" fill="#C22032" />
+  <circle cx="718" cy="396" r="4" fill="#C22032" />
+
+  <!-- ======================================================== -->
+  <!-- LEFT FENCER & CHAIR (MEASURING REACH - FOIL/EPEE)        -->
+  <!-- ======================================================== -->
+  <!-- Left Wheelchair Sports Chassis -->
+  <!-- Rear Anti-Tip Roller -->
+  <line x1="180" y1="360" x2="155" y2="420" stroke="#131F48" stroke-width="4" stroke-linecap="round" />
+  <circle cx="155" cy="420" r="6" fill="#0E406A" />
+
+  <!-- Main Sports Cambered Wheel (Oval projection to show 12° camber) -->
+  <ellipse cx="230" cy="340" rx="46" ry="68" fill="none" stroke="#131F48" stroke-width="6" transform="rotate(-8 230 340)" />
+  <ellipse cx="230" cy="340" rx="38" ry="60" fill="none" stroke="#CBD5E1" stroke-width="2" transform="rotate(-8 230 340)" />
+  <!-- Hub and Spokes -->
+  <circle cx="230" cy="340" r="10" fill="#0E406A" stroke="#131F48" stroke-width="2" />
+  <g stroke="#94A3B8" stroke-width="1" opacity="0.6">
+    <line x1="230" y1="340" x2="200" y2="280" />
+    <line x1="230" y1="340" x2="260" y2="280" />
+    <line x1="230" y1="340" x2="270" y2="340" />
+    <line x1="230" y1="340" x2="260" y2="400" />
+    <line x1="230" y1="340" x2="200" y2="400" />
+    <line x1="230" y1="340" x2="190" y2="340" />
+  </g>
+
+  <!-- Chair Frame & Seat -->
+  <path d="M 200 270 L 250 270 L 285 365 L 310 365" fill="none" stroke="#131F48" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Footrest Platform & Foot Straps -->
+  <rect x="295" y="362" width="30" height="8" rx="2" fill="#0E406A" />
+  <rect x="290" y="354" width="22" height="6" rx="2" fill="#C22032" opacity="0.9" />
+
+  <!-- Seat Cushion (Firm 10cm Competition Cushion) -->
+  <rect x="202" y="260" width="58" height="12" rx="3" fill="#0E406A" stroke="#131F48" stroke-width="1.5" />
+  <!-- Backrest (Rigid, low backrest below armpits) -->
+  <line x1="202" y1="262" x2="192" y2="190" stroke="#131F48" stroke-width="5" stroke-linecap="round" />
+  <rect x="187" y="195" width="10" height="55" rx="3" fill="#0E406A" />
+
+  <!-- INTEGRATED HOLDING BAR (Mounted directly to chair frame at hip) -->
+  <path d="M 235 268 L 235 190 L 245 190" fill="none" stroke="#0E406A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="238" y="185" width="18" height="10" rx="3" fill="#131F48" />
+
+  <!-- Left Athlete Body (Seated En Garde Reach) -->
+  <!-- Buttock & Thigh (Fully seated on cushion) -->
+  <path d="M 205 260 C 205 240, 220 230, 245 230 L 280 280 L 290 355 L 312 355" fill="none" stroke="#E2E8F0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 205 260 C 205 240, 220 230, 245 230 L 280 280 L 290 355 L 312 355" fill="none" stroke="#131F48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Pelvic Strap (Low across hip crease) -->
+  <line x1="225" y1="240" x2="245" y2="258" stroke="#C22032" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Torso & Fencing Jacket (Slight forward athletic lean) -->
+  <path d="M 210 240 C 210 210, 225 175, 248 165 C 265 175, 268 210, 255 240 Z" fill="#FFFFFF" stroke="#131F48" stroke-width="2" />
+  
+  <!-- Non-Sword Hand (Holding the Bar firmly) -->
+  <circle cx="248" cy="190" r="6" fill="#131F48" />
+  <path d="M 235 175 Q 230 185 245 190" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" />
+  <path d="M 235 175 Q 230 185 245 190" fill="none" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Mask & Head -->
+  <ellipse cx="258" cy="130" rx="14" ry="18" fill="#FFFFFF" stroke="#131F48" stroke-width="2.5" />
+  <path d="M 252 118 Q 272 130 252 144" fill="none" stroke="#0E406A" stroke-width="1.5" />
+  <!-- Mask Bib (Protection collar) -->
+  <path d="M 250 142 L 268 142 L 264 154 L 246 150 Z" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+
+  <!-- Sword Arm Extended in Mesurage (Straight Extension) -->
+  <path d="M 255 175 L 315 182 L 380 185" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" />
+  <path d="M 255 175 L 315 182 L 380 185" fill="none" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+  <!-- Glove & Bell Guard -->
+  <circle cx="382" cy="186" r="6" fill="#0E406A" />
+  <path d="M 388 174 C 392 174, 396 182, 396 186 C 396 190, 392 198, 388 198 Z" fill="#CBD5E1" stroke="#131F48" stroke-width="2" />
+  <!-- Extended Foil/Epee Blade reaching to opponent elbow -->
+  <line x1="396" y1="186" x2="522" y2="186" stroke="#131F48" stroke-width="2.5" />
+  <circle cx="522" cy="186" r="3.5" fill="#C22032" />
+
+
+  <!-- ======================================================== -->
+  <!-- RIGHT FENCER & CHAIR (EN GARDE RECEIVING MEASUREMENT)    -->
+  <!-- ======================================================== -->
+  <!-- Rear Anti-Tip Roller -->
+  <line x1="720" y1="360" x2="745" y2="420" stroke="#131F48" stroke-width="4" stroke-linecap="round" />
+  <circle cx="745" cy="420" r="6" fill="#0E406A" />
+
+  <!-- Main Sports Cambered Wheel -->
+  <ellipse cx="670" cy="340" rx="46" ry="68" fill="none" stroke="#131F48" stroke-width="6" transform="rotate(8 670 340)" />
+  <ellipse cx="670" cy="340" rx="38" ry="60" fill="none" stroke="#CBD5E1" stroke-width="2" transform="rotate(8 670 340)" />
+  <circle cx="670" cy="340" r="10" fill="#0E406A" stroke="#131F48" stroke-width="2" />
+  <g stroke="#94A3B8" stroke-width="1" opacity="0.6">
+    <line x1="670" y1="340" x2="640" y2="280" />
+    <line x1="670" y1="340" x2="700" y2="280" />
+    <line x1="670" y1="340" x2="710" y2="340" />
+    <line x1="670" y1="340" x2="700" y2="400" />
+    <line x1="670" y1="340" x2="640" y2="400" />
+    <line x1="670" y1="340" x2="630" y2="340" />
+  </g>
+
+  <!-- Chair Frame & Seat -->
+  <path d="M 700 270 L 650 270 L 615 365 L 590 365" fill="none" stroke="#131F48" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="575" y="362" width="30" height="8" rx="2" fill="#0E406A" />
+  <rect x="588" y="354" width="22" height="6" rx="2" fill="#C22032" opacity="0.9" />
+
+  <!-- Seat Cushion -->
+  <rect x="640" y="260" width="58" height="12" rx="3" fill="#0E406A" stroke="#131F48" stroke-width="1.5" />
+  <!-- Backrest -->
+  <line x1="698" y1="262" x2="708" y2="190" stroke="#131F48" stroke-width="5" stroke-linecap="round" />
+  <rect x="703" y="195" width="10" height="55" rx="3" fill="#0E406A" />
+
+  <!-- INTEGRATED HOLDING BAR -->
+  <path d="M 665 268 L 665 190 L 655 190" fill="none" stroke="#0E406A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="644" y="185" width="18" height="10" rx="3" fill="#131F48" />
+
+  <!-- Right Athlete Body -->
+  <path d="M 695 260 C 695 240, 680 230, 655 230 L 620 280 L 610 355 L 588 355" fill="none" stroke="#E2E8F0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 695 260 C 695 240, 680 230, 655 230 L 620 280 L 610 355 L 588 355" fill="none" stroke="#131F48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Pelvic Strap -->
+  <line x1="675" y1="240" x2="655" y2="258" stroke="#C22032" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Torso (Upright En Garde Position) -->
+  <path d="M 690 240 C 690 210, 675 175, 652 165 C 635 175, 632 210, 645 240 Z" fill="#FFFFFF" stroke="#131F48" stroke-width="2" />
+
+  <!-- Non-Sword Hand (Holding Bar) -->
+  <circle cx="652" cy="190" r="6" fill="#131F48" />
+  <path d="M 665 175 Q 670 185 655 190" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" />
+  <path d="M 665 175 Q 670 185 655 190" fill="none" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Mask & Head -->
+  <ellipse cx="642" cy="130" rx="14" ry="18" fill="#FFFFFF" stroke="#131F48" stroke-width="2.5" />
+  <path d="M 648 118 Q 628 130 648 144" fill="none" stroke="#0E406A" stroke-width="1.5" />
+  <path d="M 650 142 L 632 142 L 636 154 L 654 150 Z" fill="#0E406A" stroke="#131F48" stroke-width="1" />
+
+  <!-- Sword Arm in En Garde (Flexed at Elbow - Measurement Target) -->
+  <!-- Upper Arm -->
+  <path d="M 645 175 L 595 186" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" />
+  <path d="M 645 175 L 595 186" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+  <!-- Forearm flexed forward/upward -->
+  <path d="M 595 186 L 540 160" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" />
+  <path d="M 595 186 L 540 160" stroke="#131F48" stroke-width="2" stroke-linecap="round" />
+  <!-- Bell Guard & Blade -->
+  <path d="M 536 152 C 532 152, 528 158, 528 162 C 528 166, 532 172, 536 172 Z" fill="#CBD5E1" stroke="#131F48" stroke-width="2" />
+  <line x1="528" y1="162" x2="430" y2="135" stroke="#131F48" stroke-width="2.5" />
+
+  <!-- ======================================================== -->
+  <!-- TECHNICAL ANNOTATIONS & MESURAGE CALLOUTS                 -->
+  <!-- ======================================================== -->
+  <!-- Exact Point-to-Elbow Touch Callout -->
+  <circle cx="522" cy="186" r="8" fill="none" stroke="#C22032" stroke-width="2" stroke-dasharray="2,2" />
+  
+  <!-- Dimension Line for Mesurage -->
+  <line x1="396" y1="110" x2="522" y2="110" stroke="#C22032" stroke-width="2" marker-start="url(#arrow-red)" marker-end="url(#arrow-red)" />
+  <line x1="396" y1="110" x2="396" y2="175" stroke="#C22032" stroke-width="1" stroke-dasharray="3,3" />
+  <line x1="522" y1="110" x2="522" y2="180" stroke="#C22032" stroke-width="1" stroke-dasharray="3,3" />
+  
+  <!-- Mesurage Banner -->
+  <rect x="365" y="82" width="190" height="24" rx="4" fill="#C22032" />
+  <text x="460" y="98" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle" letter-spacing="0.5">MESURAGE (RULE o.102)</text>
+  <text x="460" y="125" fill="#C22032" font-size="10" font-weight="bold" text-anchor="middle">Blade Tip Touches Elbow Crease</text>
+
+  <!-- Technical Callout Cards -->
+  <!-- Callout 1: Holding Bar -->
+  <g filter="url(#card-shadow)">
+    <rect x="40" y="90" width="180" height="48" rx="4" fill="#FFFFFF" stroke="#0E406A" stroke-width="1.5" />
+    <circle cx="55" cy="106" r="7" fill="#0E406A" />
+    <text x="55" y="110" fill="#FFFFFF" font-size="9" font-weight="bold" text-anchor="middle">1</text>
+    <text x="68" y="106" fill="#131F48" font-size="10.5" font-weight="bold">Integrated Holding Bar</text>
+    <text x="68" y="122" fill="#525252" font-size="9">Welded/bolted to chair frame (Hip level)</text>
+    <path d="M 130 138 L 130 160 L 235 185" fill="none" stroke="#0E406A" stroke-width="1.5" marker-end="url(#arrow-navy)" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- Callout 2: Seat Contact (Rule o.101) -->
+  <g filter="url(#card-shadow)">
+    <rect x="40" y="280" width="150" height="48" rx="4" fill="#FFFFFF" stroke="#C22032" stroke-width="1.5" />
+    <circle cx="55" cy="296" r="7" fill="#C22032" />
+    <text x="55" y="300" fill="#FFFFFF" font-size="9" font-weight="bold" text-anchor="middle">2</text>
+    <text x="68" y="296" fill="#C22032" font-size="10.5" font-weight="bold">Rule o.101 Contact</text>
+    <text x="68" y="312" fill="#525252" font-size="9">Buttock pinned to cushion</text>
+    <path d="M 140 280 L 140 260 L 205 260" fill="none" stroke="#C22032" stroke-width="1.5" marker-end="url(#arrow-red)" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- Callout 3: Cambered Wheels & Frame Clamps -->
+  <g filter="url(#card-shadow)">
+    <rect x="710" y="280" width="160" height="48" rx="4" fill="#FFFFFF" stroke="#0E406A" stroke-width="1.5" />
+    <circle cx="725" cy="296" r="7" fill="#0E406A" />
+    <text x="725" y="300" fill="#FFFFFF" font-size="9" font-weight="bold" text-anchor="middle">3</text>
+    <text x="738" y="296" fill="#131F48" font-size="10.5" font-weight="bold">Cambered Wheel Clamps</text>
+    <text x="738" y="312" fill="#525252" font-size="9">10°–15° angle locked in rail</text>
+    <path d="M 760 328 L 760 380 L 720 395" fill="none" stroke="#0E406A" stroke-width="1.5" marker-end="url(#arrow-navy)" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- Callout 4: 110 Degree Rigging Angle -->
+  <g filter="url(#card-shadow)">
+    <rect x="690" y="90" width="180" height="48" rx="4" fill="#FFFFFF" stroke="#131F48" stroke-width="1.5" />
+    <circle cx="705" cy="106" r="7" fill="#131F48" />
+    <text x="705" y="110" fill="#FFFFFF" font-size="9" font-weight="bold" text-anchor="middle">4</text>
+    <text x="718" y="106" fill="#131F48" font-size="10.5" font-weight="bold">110° Rigging Geometry</text>
+    <text x="718" y="122" fill="#525252" font-size="9">Chairs angled to centerline (o.100)</text>
+    <path d="M 730 138 L 730 160 L 670 170" fill="none" stroke="#131F48" stroke-width="1.5" marker-end="url(#arrow-navy)" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- Bottom Legend Footer -->
+  <rect x="30" y="476" width="840" height="28" rx="4" fill="#F8FAFC" stroke="#E2E8F0" />
+  <circle cx="50" cy="490" r="4" fill="#C22032" />
+  <text x="60" y="493" fill="#131F48" font-size="10" font-weight="bold">Accent Red:</text>
+  <text x="125" y="493" fill="#525252" font-size="10">Measurement Vectors &amp; Rule Compliance Points</text>
+
+  <circle cx="420" cy="490" r="4" fill="#131F48" />
+  <text x="430" y="493" fill="#131F48" font-size="10" font-weight="bold">Deep Navy:</text>
+  <text x="495" y="493" fill="#525252" font-size="10">Primary Structural Linework &amp; Wheelchair Framing</text>
+
+  <text x="850" y="493" fill="#0E406A" font-size="10" font-weight="bold" text-anchor="end">MLCS-v1.0 Diagram Pack</text>
+</svg>

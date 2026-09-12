@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Camp Pack #1 - Modular Lesson Cards (5x7 Balanced Layout)</title>
+  <style>
+    @page {
+      size: 5in 7in;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #101A3C;
+      color: #FFFFFF;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      text-wrap: pretty;
+    }
+
+    p, li, div, span, h1, h2 {
+      text-wrap: pretty;
+    }
+
+    /* 
+      Root fix: Remove justify-content: space-between!
+      Use natural top-to-bottom flow with balanced padding & gap 
+    */
+    .card-page {
+      width: 5in;
+      height: 7in;
+      position: relative;
+      background-color: #131F48;
+      border: 1px solid #1B2A57;
+      padding: 0.22in 0.26in 0.20in 0.26in;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 6px;
+      page-break-after: always;
+      break-after: page;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .accent-rail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background-color: #C22032;
+    }
+
+    .punch-hole {
+      position: absolute;
+      top: 0.22in;
+      left: 0.22in;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px dashed #A7A9AC;
+      background-color: #101A3C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: #A7A9AC;
+    }
+
+    .punch-hole-right {
+      left: auto;
+      right: 0.22in;
+    }
+
+    .header-block {
+      padding-left: 0.2in;
+    }
+
+    .header-block-right {
+      padding-left: 0;
+      padding-right: 0.2in;
+    }
+
+    .top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1B2A57;
+      padding-bottom: 5px;
+      font-size: 11px;
+    }
+
+    .badge-id {
+      background-color: #0E406A;
+      color: #FFFFFF;
+      font-weight: bold;
+      padding: 3px 7px;
+      border-radius: 3px;
+      border: 1px solid #1B2A57;
+      font-size: 11px;
+    }
+
+    .badge-weapon {
+      color: #A7A9AC;
+      font-weight: bold;
+      margin-left: 6px;
+      font-size: 11px;
+    }
+
+    .badge-time {
+      background-color: #1B2A57;
+      color: #FFFFFF;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 11px;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 8px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+
+    .card-subtitle {
+      font-size: 11px;
+      color: #A7A9AC;
+      margin-top: 3px;
+    }
+
+    .category-tile {
+      background-color: #1B2A57;
+      border: 1px solid #243563;
+      border-radius: 4px;
+      padding: 4px 8px;
+      text-align: center;
+      min-width: 48px;
+      flex-shrink: 0;
+    }
+
+    .category-label {
+      font-size: 8px;
+      text-transform: uppercase;
+      color: #A7A9AC;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .category-val {
+      font-size: 12px;
+      font-weight: bold;
+      color: #FFFFFF;
+      margin-top: 1px;
+    }
+
+    /* Primary Content Cards (Legible typography & comfortable padding) */
+    .content-box {
+      background-color: #1B2A57;
+      border-radius: 5px;
+      padding: 6px 10px;
+    }
+
+    .content-box-dark {
+      background-color: #101A3C;
+      border: 1px solid #1B2A57;
+      border-radius: 5px;
+      padding: 6px 10px;
+    }
+
+    .box-red-bar {
+      border-left: 4px solid #C22032;
+    }
+
+    .box-white-bar {
+      border-left: 4px solid #FFFFFF;
+    }
+
+    .box-blue-bar {
+      border-left: 4px solid #0E406A;
+    }
+
+    .box-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #A7A9AC;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .box-label-white {
+      color: #FFFFFF;
+    }
+
+    .box-body {
+      font-size: 11.5px;
+      color: #FFFFFF;
+      line-height: 1.38;
+    }
+
+    .box-body-secondary {
+      font-size: 11.5px;
+      color: #C4C4C4;
+      line-height: 1.38;
+    }
+
+    .geometry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 7px;
+      text-align: center;
+    }
+
+    .geometry-cell {
+      background-color: #1B2A57;
+      border: 1px solid #243563;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .geom-label {
+      font-size: 8px;
+      text-transform: uppercase;
+      color: #A7A9AC;
+      font-weight: bold;
+    }
+
+    .geom-val {
+      font-size: 11.5px;
+      font-weight: bold;
+      color: #FFFFFF;
+      margin-top: 2px;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 7px;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .step-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-num {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      background-color: #0E406A;
+      color: #FFFFFF;
+      font-size: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-num-red {
+      background-color: #C22032;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .matrix-box {
+      background-color: #101A3C;
+      border-radius: 0 4px 4px 0;
+      padding: 7px 9px;
+    }
+
+    .matrix-title {
+      font-weight: bold;
+      color: #FFFFFF;
+      font-size: 9.5px;
+      margin-bottom: 4px;
+    }
+
+    .matrix-list {
+      list-style: none;
+      color: #C4C4C4;
+      font-size: 10.5px;
+      line-height: 1.35;
+    }
+
+    .matrix-list li {
+      margin-bottom: 3px;
+    }
+
+    .matrix-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .audit-cell {
+      background-color: #101A3C;
+      border: 1px solid #1B2A57;
+      padding: 3px 4px;
+      border-radius: 4px;
+      font-size: 9.5px;
+      color: #A7A9AC;
+    }
+
+    .audit-val {
+      font-weight: bold;
+      color: #FFFFFF;
+      margin-top: 2px;
+      font-size: 10.5px;
+    }
+
+    .footer-bar {
+      border-top: 1px solid #1B2A57;
+      padding-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9.5px;
+      color: #A7A9AC;
+      margin-top: auto; /* Push cleanly to bottom */
+    }
+
+    .footer-bold {
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+    /* Dual-Track Evaluation Framework */
+    .eval-container {
+      border: 1.5px solid #0E406A;
+      border-radius: 6px;
+      padding: 5px 8px;
+      background-color: #0d1a38;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .eval-header-title {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1E293B;
+      padding-bottom: 4px;
+    }
+
+    .eval-badge {
+      font-size: 9px;
+      font-weight: bold;
+      padding: 2px 5px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    .coach-badge {
+      background-color: #C22032;
+      color: #FFFFFF;
+    }
+
+    .athlete-badge {
+      background-color: #0E406A;
+      color: #FFFFFF;
+    }
+
+    .eval-row {
+      font-size: 10.5px;
+      line-height: 1.35;
+      color: #E2E8F0;
+    }
+
+    .eval-row strong {
+      color: #FFFFFF;
+    }
+
+    .eval-cues-tag {
+      display: inline-block;
+      background-color: #131F48;
+      border: 1px solid #0E406A;
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-weight: 600;
+      color: #FF8A8A;
+      margin-left: 2px;
+      font-size: 10px;
+    }
+
+    .audit-mini-expl {
+      font-size: 10px;
+      color: #CBD5E1;
+      line-height: 1.32;
+      background-color: #070e24;
+      border-left: 2.5px solid #C22032;
+      padding: 4px 6px;
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================= -->
+  <!-- CARD 1: RIGGING & DISTANCE PROTOCOL (MLC-FND-01)          -->
+  <!-- ========================================================= -->
+
+  <!-- SIDE A -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole">⨁</div>
+
+    <div class="header-block">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-FND-01</span>
+          <span class="badge-weapon">Universal (Foil / Épée / Sabre)</span>
+        </div>
+        <div>
+          <span style="color: #A7A9AC; margin-right: 4px;">Level 1</span>
+          <span class="badge-time">10 Mins</span>
+        </div>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Rigging Geometry & Distance Protocol</div>
+          <div class="card-subtitle">World Abilitysport Rules o.100 & o.102 • Seated Alignment</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Category</div>
+          <div class="category-val">A / B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label">Micro-Objective</div>
+      <div class="box-body">
+        Standardize wheelchair clamp alignment (110°) and execute the official distance-setting protocol (mesurage) within 45 seconds without posture distortion or seat&nbsp;detachment.
+      </div>
+    </div>
+
+    <div class="geometry-grid">
+      <div class="geometry-cell">
+        <div class="geom-label">Frame Angle</div>
+        <div class="geom-val">110° (Rule o.100)</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Measure Point</div>
+        <div class="geom-val">Elbow Crease (o.102)</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Holding Bar</div>
+        <div class="geom-val">Level w/ Lower Ribs</div>
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label">
+        <span>3-Phase Ladder (10 Min Station)</span>
+        <span style="color: #FFFFFF;">Check → Reach → Simulation</span>
+      </div>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div><strong style="color:#FFF;">Static Rigging Check (3m):</strong> Verify frame clamps are fully locked. Ensure knees flexed 90°–100°, feet strapped, pelvis seated. [3x reach&nbsp;checks]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div><strong style="color:#FFF;">Postural Re-Centering (3m):</strong> Full extension attack to target, recover to En Garde. Return to neutral spine without leaning on side-guard. [8&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num step-num-red">3</div>
+        <div><strong style="color:#FFF;">Referee Countdown Simulation (4m):</strong> Step into frame, verify distance under 30s referee clock, lock pins, salute, En&nbsp;Garde. [3 bout&nbsp;resets]</div>
+      </div>
+    </div>
+
+    <div class="matrix-grid">
+      <div class="matrix-box" style="border-left: 3px solid #C22032;">
+        <div class="matrix-title">● Red Flags (Faults)</div>
+        <ul class="matrix-list">
+          <li>• Leaning forward during measure to steal&nbsp;distance.</li>
+          <li>• Holding bar above sternum (impinges&nbsp;shoulder).</li>
+        </ul>
+      </div>
+      <div class="matrix-box" style="border-left: 3px solid #FFFFFF;">
+        <div class="matrix-title">✓ Optimal Mechanics</div>
+        <ul class="matrix-list">
+          <li>• Lumbar stays anchored flat against&nbsp;backrest.</li>
+          <li>• Wheels seated flush in clamps with zero&nbsp;play.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-box box-blue-bar">
+      <span class="box-label box-label-white">Kinesthetic Feel:</span>
+      <div class="box-body-secondary" style="font-style: italic;">
+        "Root your sit-bones into the cushion during measurement. Never stretch forward to fake reach. Set honest distance so your blade mechanics stay&nbsp;pure."
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side A: Strip-Side Field Aid</span>
+      <span class="footer-bold">Team USA Parafencing • LA28</span>
+      <span>Turn Card Over for Side B ➔</span>
+    </div>
+  </div>
+
+  <!-- SIDE B -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole punch-hole-right">⨁</div>
+
+    <div class="header-block header-block-right">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-FND-01</span>
+          <span class="badge-weapon">Home Club Translation</span>
+        </div>
+        <span class="badge-time">Take-Home Guide</span>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Rigging & Measure at Home Club</div>
+          <div class="card-subtitle">Personal Coach Translation & Solo Wall Work</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Target</div>
+          <div class="category-val">Coaches</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-white-bar">
+      <div class="box-label box-label-white">1. Club Setup Without a Fencing Frame</div>
+      <div class="box-body">
+        Seat an able-bodied coach or teammate in a heavy stationary chair (or weigh down rear legs with 25 lb gym plates). Measure distance with shorter reach arm touching opponent's elbow crease. Seated partner cannot shift or stand during&nbsp;exchanges.
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label box-label-white">2. Solo Target & Floor Tape Alignment</div>
+      <div class="box-body-secondary">
+        Park wheelchair facing a wall target or hanging plastron. Touch blade tip to target while holding elbow at 90°, then extend. Mark wheel footprint on the floor with gaffer tape for instant 110° angle replication at every&nbsp;practice.
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label box-label-white">3. Compensatory Symmetry (Lesgaft Protocol)</div>
+      <div class="box-body-secondary">
+        • <strong>Scapular Wall Slides:</strong> 3 sets of 12 reps against doorframe to pull protracted shoulders back after seated distance&nbsp;drills.<br>
+        • <strong>Bilateral Latissimus Stretch:</strong> Overhead strap stretch held for 30 seconds per&nbsp;side.
+      </div>
+    </div>
+
+    <div class="eval-container">
+      <div class="eval-header-title">
+        <span>Coach Evaluation &amp; Athlete Self-Audit</span>
+        <span class="eval-badge coach-badge">Dual-Track</span>
+      </div>
+      <div class="eval-row">
+        <strong>Coach Watch:</strong> Verify pelvis centered and back flush to rest during measurement. Check clamp has zero rotational play.
+      </div>
+      <div class="eval-row">
+        <strong>Coach Cues:</strong>
+        <span class="eval-cues-tag">"Root the seat!"</span>
+        <span class="eval-cues-tag">"Straight spine!"</span>
+        <span class="eval-cues-tag">"Check clamp lock!"</span>
+      </div>
+      <div class="audit-mini-expl">
+        <strong>Athlete Self-Audit (How to Conduct):</strong> Freeze in recovery for 2 seconds. Mentally scan sit-bone contact, bar tension, and core stability before receiving coach feedback to build internal kinesthetic awareness.
+      </div>
+      <div class="audit-grid">
+        <div class="audit-cell">
+          <div>Back flat on rest?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Bar clamped tight?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Hips seated on hit?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side B: Club Take-Home</span>
+      <span class="footer-bold">Rule o.100 & o.102 Compliant</span>
+      <span>Team USA Parafencing • LA28</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- CARD 2: HOLDING-BAR KINETIC PUSH-PULL (MLC-FND-02)        -->
+  <!-- ========================================================= -->
+
+  <!-- SIDE A -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole">⨁</div>
+
+    <div class="header-block">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-FND-02</span>
+          <span class="badge-weapon">Universal (Foil / Épée / Sabre)</span>
+        </div>
+        <div>
+          <span style="color: #A7A9AC; margin-right: 4px;">Level 2</span>
+          <span class="badge-time">12 Mins</span>
+        </div>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Holding-Bar Kinetic Push-Pull Mechanics</div>
+          <div class="card-subtitle">Italian Federscherma (+18% Tip Velocity) & Chinese Core Pre-Activation</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Category</div>
+          <div class="category-val">A / B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label">Micro-Objective</div>
+      <div class="box-body">
+        Replace passive holding-bar gripping with an active push-pull kinetic coupling: pulling backward to launch forward acceleration and pushing forward to brake defensive&nbsp;recoveries.
+      </div>
+    </div>
+
+    <div class="geometry-grid">
+      <div class="geometry-cell">
+        <div class="geom-label">Holding Grip</div>
+        <div class="geom-val">Thumb Up, 45° Elbow</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Grip Tension</div>
+        <div class="geom-val">4/10 Prep → 8/10 Hit</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Torque Transfer</div>
+        <div class="geom-val">+18% Tip Velocity</div>
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label">
+        <span>3-Phase Ladder (12 Min Station)</span>
+        <span style="color: #FFFFFF;">Launch → Brake → Double Action</span>
+      </div>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div><strong style="color:#FFF;">Pull-to-Launch (4m):</strong> From En Garde, violently pull backward on holding bar while extending sword arm into direct thrust. Bar pull accelerates sword shoulder. [8&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div><strong style="color:#FFF;">Push-to-Brake (4m):</strong> From maximum forward reach, violently push forward against bar to brake momentum and snap torso back to upright defense without hip&nbsp;slip. [8&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num step-num-red">3</div>
+        <div><strong style="color:#FFF;">Double-Action Exchange (4m):</strong> Coach shows high line → Athlete pulls bar to attack. Coach counters immediately → Athlete pushes bar to retreat into Parry&nbsp;4. [6&nbsp;cycles]</div>
+      </div>
+    </div>
+
+    <div class="matrix-grid">
+      <div class="matrix-box" style="border-left: 3px solid #C22032;">
+        <div class="matrix-title">● Red Flags (Faults)</div>
+        <ul class="matrix-list">
+          <li>• White-knuckle grip causing neck/trap&nbsp;spasm.</li>
+          <li>• Non-sword hand releasing bar (Rule o.101&nbsp;fault).</li>
+        </ul>
+      </div>
+      <div class="matrix-box" style="border-left: 3px solid #FFFFFF;">
+        <div class="matrix-title">✓ Optimal Mechanics</div>
+        <ul class="matrix-list">
+          <li>• Audible exhale synchronized with&nbsp;thrust.</li>
+          <li>• Smooth torque transfer from holding arm to&nbsp;tip.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-box box-blue-bar">
+      <span class="box-label box-label-white">Kinesthetic Feel:</span>
+      <div class="box-body-secondary" style="font-style: italic;">
+        "The holding bar is your gas pedal and your brake pedal. Pull it toward your armpit to shoot forward; push it away toward the floor to snap&nbsp;backward."
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side A: Strip-Side Field Aid</span>
+      <span class="footer-bold">Team USA Parafencing • LA28</span>
+      <span>Turn Card Over for Side B ➔</span>
+    </div>
+  </div>
+
+  <!-- SIDE B -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole punch-hole-right">⨁</div>
+
+    <div class="header-block header-block-right">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-FND-02</span>
+          <span class="badge-weapon">Home Club Translation</span>
+        </div>
+        <span class="badge-time">Take-Home Guide</span>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Holding-Bar Training at Home</div>
+          <div class="card-subtitle">Personal Coach Translation & Band Mechanics</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Target</div>
+          <div class="category-val">Coaches</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-white-bar">
+      <div class="box-label box-label-white">1. Personal Coach Visual Cue</div>
+      <div class="box-body">
+        Observe athlete from non-fencing side. Watch non-sword elbow: if elbow stays locked rigid throughout attacks, athlete is bracing passively. Cue: <em class="text-white">"Pull the elbow back to fire the sword&nbsp;forward!"</em>
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label box-label-white">2. Solo Resistance Band Coupling Drill</div>
+      <div class="box-body-secondary">
+        Anchor a moderate resistance band behind your wheelchair holding bar. Hold handle in non-fencing hand. Practice pulling band backward while lunging forward to strike a hanging wall target. Perform 3 sets of 15&nbsp;reps.
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label box-label-white">3. Compensatory Symmetry (Lesgaft Protocol)</div>
+      <div class="box-body-secondary">
+        • <strong>Band Pull-Aparts:</strong> 3 sets of 15 reps palms up to strengthen rhomboids and balance asymmetric anterior deltoid&nbsp;dominance.<br>
+        • <strong>Unilateral Latissimus Hang:</strong> Hang gently from doorframe with holding-bar arm to decompress lumbodorsal&nbsp;fascia.
+      </div>
+    </div>
+
+    <div class="eval-container">
+      <div class="eval-header-title">
+        <span>Coach Evaluation &amp; Athlete Self-Audit</span>
+        <span class="eval-badge coach-badge">Dual-Track</span>
+      </div>
+      <div class="eval-row">
+        <strong>Coach Watch:</strong> Watch non-sword shoulder during acceleration; ensure no shrugging. Check violent push on bar arrests momentum cleanly before pelvic shift.
+      </div>
+      <div class="eval-row">
+        <strong>Coach Cues:</strong>
+        <span class="eval-cues-tag">"Pull to launch, push to brake!"</span>
+        <span class="eval-cues-tag">"Shoulders down!"</span>
+        <span class="eval-cues-tag">"Snap the core!"</span>
+      </div>
+      <div class="audit-mini-expl">
+        <strong>Athlete Self-Audit (How to Conduct):</strong> Freeze upon recovery. Scan shoulder relaxation and grip tension. Check if the bar stopped your forward momentum or if your pelvis slid forward across the cushion.
+      </div>
+      <div class="audit-grid">
+        <div class="audit-cell">
+          <div>Bar arm active?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Extra tip snap felt?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Clean brake on recovery?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side B: Club Take-Home</span>
+      <span class="footer-bold">Rule o.101 Compliant</span>
+      <span>Team USA Parafencing • LA28</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- CARD 3: BUTTOCK CONTACT INTEGRITY (MLC-FND-03)           -->
+  <!-- ========================================================= -->
+
+  <!-- SIDE A -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole">⨁</div>
+
+    <div class="header-block">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-FND-03</span>
+          <span class="badge-weapon">Universal (Foil / Épée / Sabre)</span>
+        </div>
+        <div>
+          <span style="color: #A7A9AC; margin-right: 4px;">Level 1</span>
+          <span class="badge-time">10 Mins</span>
+        </div>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Buttock Contact & Décollement Prevention</div>
+          <div class="card-subtitle">Rule o.101 / t.101 Biomechanics • Yellow-Card Avoidance</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Category</div>
+          <div class="category-val">A / B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label">Micro-Objective</div>
+      <div class="box-body">
+        Establish athlete's maximum forward and backward reach threshold while maintaining continuous ischial tuberosity (buttock) contact, eliminating yellow-card&nbsp;penalties.
+      </div>
+    </div>
+
+    <div class="geometry-grid">
+      <div class="geometry-cell">
+        <div class="geom-label">Rule Citation</div>
+        <div class="geom-val">o.101 / t.101</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Cushion Max</div>
+        <div class="geom-val">10 cm Thickness</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Pelvic Strap</div>
+        <div class="geom-val">45° Across Crease</div>
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label">
+        <span>3-Phase Ladder (10 Min Station)</span>
+        <span style="color: #FFFFFF;">Boundary → Reach → Audit</span>
+      </div>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div><strong style="color:#FFF;">Legal Attack Horizon (3m):</strong> Athlete slowly leans forward into reach until coach spots rear buttock start to lift. Back off 2 inches: mark safe reach angle. [6x 5s&nbsp;holds]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div><strong style="color:#FFF;">Full-Effort Grounding (3m):</strong> Coach presents target at horizon limit. Athlete executes explosive direct attacks, driving rear heel/thigh down to root pelvis. [10&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num step-num-red">3</div>
+        <div><strong style="color:#FFF;">Seat Judge Referee Audit (4m):</strong> Peer sits at floor level behind hip line. Fencer spars 5 touches. If light appears under rear buttock, judge calls "HALT / LIFT!" [5&nbsp;touches]</div>
+      </div>
+    </div>
+
+    <div class="matrix-grid">
+      <div class="matrix-box" style="border-left: 3px solid #C22032;">
+        <div class="matrix-title">● Red Flags (Faults)</div>
+        <ul class="matrix-list">
+          <li>• Loose pelvic strap allows forward hip&nbsp;slide.</li>
+          <li>• Rear buttock lifts on recovery (o.101&nbsp;card).</li>
+        </ul>
+      </div>
+      <div class="matrix-box" style="border-left: 3px solid #FFFFFF;">
+        <div class="matrix-title">✓ Optimal Mechanics</div>
+        <ul class="matrix-list">
+          <li>• Pelvis stays rooted through 45° torso&nbsp;lean.</li>
+          <li>• Core and adductors lock pelvis to&nbsp;cushion.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-box box-blue-bar">
+      <span class="box-label box-label-white">Kinesthetic Feel:</span>
+      <div class="box-body-secondary" style="font-style: italic;">
+        "Anchor your seat like a tree root. Reach with your sternum and shoulder blade, not your waist. If you feel air under your rear pocket, you have given away a&nbsp;point."
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side A: Strip-Side Field Aid</span>
+      <span class="footer-bold">Team USA Parafencing • LA28</span>
+      <span>Turn Card Over for Side B ➔</span>
+    </div>
+  </div>
+
+  <!-- SIDE B -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole punch-hole-right">⨁</div>
+
+    <div class="header-block header-block-right">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-FND-03</span>
+          <span class="badge-weapon">Home Club Translation</span>
+        </div>
+        <span class="badge-time">Take-Home Guide</span>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Seat Contact Audit at Home Club</div>
+          <div class="card-subtitle">Personal Coach Paper Test & Solo Drills</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Target</div>
+          <div class="category-val">Coaches</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-white-bar">
+      <div class="box-label box-label-white">1. The Personal Coach "Paper Test"</div>
+      <div class="box-body">
+        Have your home coach place a standard sheet of printer paper under your rear hip pocket. Execute 10 maximum-reach lunges. The paper must remain firmly clamped and not slip out under gentle coach&nbsp;tugging.
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label box-label-white">2. Solo Credit Card Wall Drill</div>
+      <div class="box-body-secondary">
+        Place a folded card under your rear thigh/buttock while practicing wall-target lunges. If the card falls to the floor when you lean forward to touch the target, the rep does not count. Complete 3 sets of 10 clean&nbsp;reps.
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label box-label-white">3. Compensatory Symmetry (Lesgaft Protocol)</div>
+      <div class="box-body-secondary">
+        • <strong>Posterior Pelvic Tilts:</strong> Lying supine on mat, perform 3 sets of 12 tilts pressing lumbar flat to restore pelvic&nbsp;alignment.<br>
+        • <strong>Isometric Glute Holds:</strong> 3 sets of 10 holds (5s each) to reinforce pelvic floor&nbsp;stabilization.
+      </div>
+    </div>
+
+    <div class="eval-container">
+      <div class="eval-header-title">
+        <span>Coach Evaluation &amp; Athlete Self-Audit</span>
+        <span class="eval-badge coach-badge">Dual-Track</span>
+      </div>
+      <div class="eval-row">
+        <strong>Coach Watch:</strong> Watch profile at cushion level. Ensure rear ischial tuberosity maintains continuous contact during max reach. Tug gently on paper sheet under rear buttock.
+      </div>
+      <div class="eval-row">
+        <strong>Coach Cues:</strong>
+        <span class="eval-cues-tag">"Pin the paper!"</span>
+        <span class="eval-cues-tag">"Reach from scapula!"</span>
+        <span class="eval-cues-tag">"Stay anchored!"</span>
+      </div>
+      <div class="audit-mini-expl">
+        <strong>Athlete Self-Audit (How to Conduct):</strong> Hold full reach for 2 seconds. Feel rear hip pocket pressing firmly into the cushion. If pressure drops or air enters under the hip, you have crossed into penalty territory (Rule o.101).
+      </div>
+      <div class="audit-grid">
+        <div class="audit-cell">
+          <div>Paper stayed pinned?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Strap low across hips?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Zero slide on recovery?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side B: Club Take-Home</span>
+      <span class="footer-bold">Rule o.101 Strict</span>
+      <span>Team USA Parafencing • LA28</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- CARD 4: MICRO-DISTANCE TORSO DODGE (MLC-DST-01)          -->
+  <!-- ========================================================= -->
+
+  <!-- SIDE A -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole">⨁</div>
+
+    <div class="header-block">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-DST-01</span>
+          <span class="badge-weapon">Foil / Épée</span>
+        </div>
+        <div>
+          <span style="color: #A7A9AC; margin-right: 4px;">Level 3</span>
+          <span class="badge-time">12 Mins</span>
+        </div>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Micro-Distance Torso Dodge (Távolságérzék)</div>
+          <div class="card-subtitle">Hungarian Szekeres Doctrine • Drawing Direct Attacks Short</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Category</div>
+          <div class="category-val">A / B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label">Micro-Objective</div>
+      <div class="box-body">
+        Induce opponent's attack to miss by 2–3 inches via rapid backward torso flexion (retaining Rule o.101 seat contact), followed by immediate counter-thrust into open&nbsp;preparation.
+      </div>
+    </div>
+
+    <div class="geometry-grid">
+      <div class="geometry-cell">
+        <div class="geom-label">Frame Angle</div>
+        <div class="geom-val">110° (Rule o.100)</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Measure Point</div>
+        <div class="geom-val">Elbow Crease</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Holding Bar</div>
+        <div class="geom-val">Primed to Pull</div>
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label">
+        <span>3-Phase Ladder (12 Min Station)</span>
+        <span style="color: #FFFFFF;">Timing → Deception → Priority</span>
+      </div>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div><strong style="color:#FFF;">Predictable Timing (4m):</strong> Partner attacks on 3s count. Pull bar, lean torso back 15°–20°. Point misses by 2". Return straight thrust. [8&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div><strong style="color:#FFF;">Broken Rhythm (4m):</strong> Partner varies cadence and feints. Athlete holds ground on feint, dodges on committed extension, hits low line. [10&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num step-num-red">3</div>
+        <div><strong style="color:#FFF;">Bout Scenario (4m):</strong> Tied 4–4. Partner has priority. Athlete can only score on dodge-and-hit within 1 tempo of opponent's miss. [5&nbsp;touches]</div>
+      </div>
+    </div>
+
+    <div class="matrix-grid">
+      <div class="matrix-box" style="border-left: 3px solid #C22032;">
+        <div class="matrix-title">● Red Flags (Faults)</div>
+        <ul class="matrix-list">
+          <li>• Buttock lifts off seat on lean (o.101&nbsp;card).</li>
+          <li>• Sword elbow collapses downward or&nbsp;back.</li>
+        </ul>
+      </div>
+      <div class="matrix-box" style="border-left: 3px solid #FFFFFF;">
+        <div class="matrix-title">✓ Optimal Mechanics</div>
+        <ul class="matrix-list">
+          <li>• Torso shifts just enough to clear tip&nbsp;(2").</li>
+          <li>• Weapon tip stays primed and aimed&nbsp;forward.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-box box-blue-bar">
+      <span class="box-label box-label-white">Kinesthetic Feel:</span>
+      <div class="box-body-secondary" style="font-style: italic;">
+        "Don't dodge with your sword arm; dodge with your chest. Pull the target back like a matador, keeping your point cocked and ready to fire&nbsp;forward."
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side A: Strip-Side Field Aid</span>
+      <span class="footer-bold">Team USA Parafencing • LA28</span>
+      <span>Turn Card Over for Side B ➔</span>
+    </div>
+  </div>
+
+  <!-- SIDE B -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole punch-hole-right">⨁</div>
+
+    <div class="header-block header-block-right">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-DST-01</span>
+          <span class="badge-weapon">Home Club Translation</span>
+        </div>
+        <span class="badge-time">Take-Home Guide</span>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Micro-Distance Practice at Home</div>
+          <div class="card-subtitle">Personal Coach Translation & Pendulum Drills</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Target</div>
+          <div class="category-val">Coaches</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-white-bar">
+      <div class="box-label box-label-white">1. Personal Coach Sparring Adaptation</div>
+      <div class="box-body">
+        Seat an able-bodied coach or club teammate in a heavy stationary chair. Instruct them: <em class="text-white">"Extend your blade directly at my chest to graze my jacket fabric. I will dodge back 1 inch without leaving my seat."</em>
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label box-label-white">2. Solo Pendulum Swing Drill</div>
+      <div class="box-body-secondary">
+        Hang a tennis ball from a doorframe at chest height. Push ball so it swings toward you. Lean torso backward to let it clear chest by 1 inch, then instantly hit ball as it swings away. 3 sets of 15&nbsp;reps.
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label box-label-white">3. Compensatory Symmetry (Lesgaft Protocol)</div>
+      <div class="box-body-secondary">
+        • <strong>Chin Tucks & Deep Cervical Flexors:</strong> 3 sets of 10 holds (5s) against wall to counter backward head&nbsp;whip.<br>
+        • <strong>Seated Torso Twists:</strong> With foam roller across chest to balance thoracic rotational&nbsp;forces.
+      </div>
+    </div>
+
+    <div class="eval-container">
+      <div class="eval-header-title">
+        <span>Coach Evaluation &amp; Athlete Self-Audit</span>
+        <span class="eval-badge coach-badge">Dual-Track</span>
+      </div>
+      <div class="eval-row">
+        <strong>Coach Watch:</strong> Verify torso evasion is driven by spinal flexion rather than weapon-arm retraction. Ensure point remains threatening target so riposte is instant.
+      </div>
+      <div class="eval-row">
+        <strong>Coach Cues:</strong>
+        <span class="eval-cues-tag">"Bait with the chest!"</span>
+        <span class="eval-cues-tag">"Point stays cocked!"</span>
+        <span class="eval-cues-tag">"Snap the riposte!"</span>
+      </div>
+      <div class="audit-mini-expl">
+        <strong>Athlete Self-Audit (How to Conduct):</strong> Freeze immediately upon parry. Mentally check whether you dodged with your spine while keeping your blade threatening target, or panicked and pulled your weapon arm back.
+      </div>
+      <div class="audit-grid">
+        <div class="audit-cell">
+          <div>Seat anchored?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Tip aimed forward?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Hit in 1 tempo?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side B: Club Take-Home</span>
+      <span class="footer-bold">Rule t.102 Compliant</span>
+      <span>Team USA Parafencing • LA28</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================= -->
+  <!-- CARD 5: SECOND-INTENTION COUNTER-TIME (MLC-TAC-01)        -->
+  <!-- ========================================================= -->
+
+  <!-- SIDE A -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole">⨁</div>
+
+    <div class="header-block">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-TAC-01</span>
+          <span class="badge-weapon">Foil / Sabre (Adaptable to Épée)</span>
+        </div>
+        <div>
+          <span style="color: #A7A9AC; margin-right: 4px;">Level 4</span>
+          <span class="badge-time">12 Mins</span>
+        </div>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Second-Intention False Preparation & Counter</div>
+          <div class="card-subtitle">Russian Tactical Model (Lesgaft: >64% Seated Touches)</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Category</div>
+          <div class="category-val">A / B</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label">Micro-Objective</div>
+      <div class="box-body">
+        Execute an intentional false direct attack to draw opponent's parry or counter-attack, immediately parry their expected riposte, and score on the&nbsp;counter-riposte.
+      </div>
+    </div>
+
+    <div class="geometry-grid">
+      <div class="geometry-cell">
+        <div class="geom-label">Tactical Rationale</div>
+        <div class="geom-val">Provoke Parry</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">First Action</div>
+        <div class="geom-val">False Half-Thrust</div>
+      </div>
+      <div class="geometry-cell">
+        <div class="geom-label">Final Touch</div>
+        <div class="geom-val">Counter-Riposte</div>
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label">
+        <span>3-Phase Ladder (12 Min Station)</span>
+        <span style="color: #FFFFFF;">Draw → Cadence → Constraint</span>
+      </div>
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div><strong style="color:#FFF;">False Attack Draw (4m):</strong> Athlete launches half-extension false thrust into Sixte. Partner parries 6 and ripostes. Athlete catches riposte in opposition Parry 4 and hits. [8&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div><strong style="color:#FFF;">Cadence Shift (4m):</strong> Athlete varies false attack speed. Partner delays riposte; athlete must hold parry position until riposte launches, avoiding premature twitch. [8&nbsp;reps]</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num step-num-red">3</div>
+        <div><strong style="color:#FFF;">Pressure Game (4m):</strong> Live bout constraint: attacker can ONLY score via second-intention counter-riposte. Hits on direct first attacks do not count. [First to 3&nbsp;touches]</div>
+      </div>
+    </div>
+
+    <div class="matrix-grid">
+      <div class="matrix-box" style="border-left: 3px solid #C22032;">
+        <div class="matrix-title">● Red Flags (Faults)</div>
+        <ul class="matrix-list">
+          <li>• Overcommitting body on first attack&nbsp;(stuck).</li>
+          <li>• Telegraphing false attack by looking&nbsp;away.</li>
+        </ul>
+      </div>
+      <div class="matrix-box" style="border-left: 3px solid #FFFFFF;">
+        <div class="matrix-title">✓ Optimal Mechanics</div>
+        <ul class="matrix-list">
+          <li>• First attack looks 100% real to&nbsp;defender.</li>
+          <li>• Attack → Parry → Riposte in one fluid&nbsp;tempo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-box box-blue-bar">
+      <span class="box-label box-label-white">Kinesthetic Feel:</span>
+      <div class="box-body-secondary" style="font-style: italic;">
+        "The first attack is bait on a hook. Cast the bait smoothly. When the fish bites (the parry), set the hook with your second parry and finish&nbsp;cleanly."
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side A: Strip-Side Field Aid</span>
+      <span class="footer-bold">Team USA Parafencing • LA28</span>
+      <span>Turn Card Over for Side B ➔</span>
+    </div>
+  </div>
+
+  <!-- SIDE B (The one from Kamilla's screenshot, completely redesigned with balanced proportions!) -->
+  <div class="card-page">
+    <div class="accent-rail"></div>
+    <div class="punch-hole punch-hole-right">⨁</div>
+
+    <div class="header-block header-block-right">
+      <div class="top-meta">
+        <div>
+          <span class="badge-id">MLC-TAC-01</span>
+          <span class="badge-weapon">Home Club Translation</span>
+        </div>
+        <span class="badge-time">Take-Home Guide</span>
+      </div>
+      <div class="title-row">
+        <div>
+          <div class="card-title">Second-Intention Practice at Home</div>
+          <div class="card-subtitle">Personal Coach Translation & Two-Target Wall Work</div>
+        </div>
+        <div class="category-tile">
+          <div class="category-label">Target</div>
+          <div class="category-val">Coaches</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-box box-white-bar">
+      <div class="box-label box-label-white">1. Able-Bodied Sparring Partner Drill</div>
+      <div class="box-body">
+        Seat an able-bodied teammate opposite you in a heavy stationary chair. Instruct them: <em class="text-white">"Whenever I extend, parry my blade as hard as you can and riposte straight at my chest."</em> This gives your partner a simple job while giving you realistic second-intention counter-riposte practice.
+      </div>
+    </div>
+
+    <div class="content-box-dark">
+      <div class="box-label box-label-white">2. Solo Two-Target Wall Drill</div>
+      <div class="box-body-secondary">
+        Place Target A (high outside) and Target B (high inside) on a wall. Strike Target A lightly (false draw), snap weapon back to guard (simulating parry), and strike Target B with maximum speed and extension. Perform 3 sets of 12&nbsp;reps.
+      </div>
+    </div>
+
+    <div class="content-box box-red-bar">
+      <div class="box-label box-label-white">3. Compensatory Symmetry (Lesgaft Protocol)</div>
+      <div class="box-body-secondary">
+        • <strong>Eccentric Forearm Extensions:</strong> 3 sets of 12 with 2 lb weight to offload lateral epicondyle from heavy consecutive&nbsp;parries.<br>
+        • <strong>Chest Doorway Stretch:</strong> Open anterior chest wall after tight second-intention defensive holding&nbsp;postures.
+      </div>
+    </div>
+
+    <div class="eval-container">
+      <div class="eval-header-title">
+        <span>Coach Evaluation &amp; Athlete Self-Audit</span>
+        <span class="eval-badge coach-badge">Dual-Track</span>
+      </div>
+      <div class="eval-row">
+        <strong>Coach Watch:</strong> Verify first false attack displays convincing extension drawing opponent's parry without overcommitting body. Confirm weapon tip re-engages target immediately upon counter-parry.
+      </div>
+      <div class="eval-row">
+        <strong>Coach Cues:</strong>
+        <span class="eval-cues-tag">"Sell first attack!"</span>
+        <span class="eval-cues-tag">"Don't drown in reach!"</span>
+        <span class="eval-cues-tag">"Counter-parry & fire!"</span>
+      </div>
+      <div class="audit-mini-expl">
+        <strong>Athlete Self-Audit (How to Conduct):</strong> Pause after the phrase. Replay the sequence in your head. Did your preparation provoke a committed defensive response, and did you stay centered enough to execute the counter-action?
+      </div>
+      <div class="audit-grid">
+        <div class="audit-cell">
+          <div>First attack real?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Smooth recovery?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+        <div class="audit-cell">
+          <div>Clean riposte hit?</div>
+          <div class="audit-val">YES / NO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>Side B: Club Take-Home</span>
+      <span class="footer-bold">Rule t.103 Compliant</span>
+      <span>Team USA Parafencing • LA28</span>
+    </div>
+  </div>
+
+</body>
+</html>
