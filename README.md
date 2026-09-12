@@ -154,8 +154,22 @@ parafencing-modular-card-factory/
 
 ---
 
-## 9. Governance & Lineage
+## 9. Governance, Pedagogical Lineage & Academic Attribution
 
-* **Author & Architect**: Kamilla Gafurzianova (25+ years fencing experience; Olympic Silver Medalist)
-* **Organization**: P4P - Parafencing 4 Progress
-* **Governing Framework**: BAZA Architecture & Phrase Protocol (`BAZA-PROTOCOL-FENCING-001`)
+This project does not claim original authorship of the underlying fencing pedagogy. The pedagogical architecture and drill structure of these modular cards are grounded directly in decades of empirical research and coaching education developed by French fencing masters, biomechanists, and national sports science institutions:
+
+### Primary Research Lineage & Pedagogical Sources
+* **Direction Technique Nationale (DTN): Fédération Française Handisport (FFH) & Fédération Française d\'Escrime (FFE)**:
+  * The formal *Fiche Pédagogique* (Pedagogical Drill Card) architecture, establishing the 6 invariant sections: *Situation d\'Apprentissage*, *Objectif Opérationnel*, *Rôle du Plastron*, *Comportement de l\'Élève*, *Critères de Réussite & Auto-Évaluation*, and *Variables Didactiques*.
+  * *Mallette Pédagogique Handisport*: Standardized instructional frameworks developed specifically for wheelchair fencers training in mainstream clubs with able-bodied sparring partners (*partenaires valides*).
+* **Maître Christian Aubailly**:
+  * Pioneer of modern wheelchair fencing pedagogy and biomechanics. His seminal manuals, federal coaching guides, and research codified fixed-frame distance (*mesurage*), non-weapon arm bracing mechanics, and blade alignment from a stationary chassis.
+* **Institut National du Sport, de l\'Expertise et de la Performance (INSEP) & CREPS de Châtenay-Malabry**:
+  * Neuromuscular reaction time studies (150-300ms execution windows), motor learning papers, and sports psychology research establishing the principle of *Économie de mots* (verbal economy) to eliminate cognitive interference during motor skill acquisition.
+* **Classical French Fencing Lineage (Camille Prévost, Louis Rondelle)**:
+  * Historical foundation for clinical, anatomical line analysis and the strict rejection of caricature or decorative distortion in technical fencing treatises.
+
+### Systems Architecture, Packaging & Implementation
+* **Architectural Integration & Adaptation**: Kamilla Gafurzianova (Olympic Silver Medalist, 25+ years fencing lineage)
+* **Organization & Mission**: P4P: Parafencing 4 Progress
+* **Automation & Typesetting Engine**: BAZA Architecture, Phrase Protocol (BAZA-PROTOCOL-FENCING-001), and Colab Sequential Topology (BAZA-PRTCL-009 v1.2)
