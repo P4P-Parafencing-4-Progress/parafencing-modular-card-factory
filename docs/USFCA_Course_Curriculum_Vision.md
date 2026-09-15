@@ -2,7 +2,7 @@
 
 > **Author**: Kamilla Gafurzianova (Olympic Silver Medalist, National Para-Fencing Coach)  
 > **Target Body**: United States Fencing Coaches Association (USFCA)  
-> **Key Stakeholders**: Vincent "Vinny" Bradford (Executive Director, USFCA), Christina (PERA Task Force Lead), Credentialing and Accreditation Body (CAB)  
+> **Key Stakeholders**: Credentialing and Accreditation Body (CAB)  
 > **Date**: September 2026  
 > **Reference Document**: BAZA-USFCA-PARA-001  
 
