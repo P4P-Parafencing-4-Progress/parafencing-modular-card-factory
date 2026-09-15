@@ -3,8 +3,7 @@
 > **Author**: Kamilla Gafurzianova (Olympic Silver Medalist, National Para-Fencing Coach)  
 > **Target Body**: United States Fencing Coaches Association (USFCA)  
 > **Key Stakeholders**: Credentialing and Accreditation Body (CAB)  
-> **Date**: September 2026  
-> **Reference Document**: BAZA-USFCA-PARA-001  
+> **Date**: September 2026
 
 ---
 
