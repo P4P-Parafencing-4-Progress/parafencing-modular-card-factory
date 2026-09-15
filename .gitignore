@@ -15,3 +15,15 @@ venv/
 # Operating System files
 .DS_Store
 Thumbs.db
+
+# Meeting transcripts & raw audio notes
+*Discussion.md
+*Discussion.txt
+
+# Private communications, emails & drafts
+*Email*
+*email*
+*Draft*
+*draft*
+*.draft
+
