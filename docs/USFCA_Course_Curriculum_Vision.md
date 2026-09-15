@@ -1,6 +1,6 @@
 # USFCA Para-Fencing Curriculum Vision: Modular Course Architecture
 
-> **Author**: Kamilla Gafurzianova (Olympic Silver Medalist, National Para-Fencing Coach)  
+> **Author**: Kamilla Gafurzianova (Olympic Silver Medalist, Interim National Parafencing Coach)  
 > **Target Body**: United States Fencing Coaches Association (USFCA)  
 > **Key Stakeholders**: Credentialing and Accreditation Body (CAB)  
 > **Date**: September 2026
